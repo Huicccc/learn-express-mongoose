@@ -2,9 +2,9 @@ let Book = require('../models/book');
 let Author = require('../models/author');
 
 function get_books () {
-  return Book.find({}, 'title author')
+  return Book.find({}, 'title author') // {} no condition
     .sort({title : 1})  // 1 indictes ascending order
-    .populate('author');
+    .populate('author'); // author is ObjectID
 }
 
 exports.show_books = async () => {
